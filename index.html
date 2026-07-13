@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BrowserOS Lite</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- ===================== BOOT SCREEN ===================== -->
+        <div id="boot-screen">
+            <div class="boot-content">
+                <div class="boot-logo">💻</div>
+                <div class="boot-title">BrowserOS <span>Lite</span></div>
+                <div class="boot-bar-wrap">
+                    <div class="boot-bar">
+                        <div class="boot-progress"></div>
+                    </div>
+                </div>
+                <div class="boot-sub">Loading system…</div>
+            </div>
+        </div>
+
+        <!-- ===================== DESKTOP ===================== -->
+        <div id="desktop">
+            <!-- Desktop icons -->
+            <div id="desktop-icons">
+                <div class="desktop-icon" data-app="notes">
+                    <div class="icon-img">📝</div>
+                    <span>Notes</span>
+                </div>
+                <div class="desktop-icon" data-app="terminal">
+                    <div class="icon-img">💻</div>
+                    <span>Terminal</span>
+                </div>
+                <div class="desktop-icon" data-app="files">
+                    <div class="icon-img">📁</div>
+                    <span>Files</span>
+                </div>
+                <div class="desktop-icon" data-app="settings">
+                    <div class="icon-img">⚙️</div>
+                    <span>Settings</span>
+                </div>
+            </div>
+
+            <!-- Window container -->
+            <div id="windows-container"></div>
+        </div>
+        <!-- #desktop -->
+
+        <!-- ===================== TASKBAR ===================== -->
+        <div id="taskbar">
+            <button id="start-btn" title="Start Menu (Ctrl+Escape)">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <rect
+                        x="0"
+                        y="0"
+                        width="6"
+                        height="6"
+                        rx="1"
+                        fill="currentColor"
+                    />
+                    <rect
+                        x="8"
+                        y="0"
+                        width="6"
+                        height="6"
+                        rx="1"
+                        fill="currentColor"
+                    />
+                    <rect
+                        x="0"
+                        y="8"
+                        width="6"
+                        height="6"
+                        rx="1"
+                        fill="currentColor"
+                    />
+                    <rect
+                        x="8"
+                        y="8"
+                        width="6"
+                        height="6"
+                        rx="1"
+                        fill="currentColor"
+                    />
+                </svg>
+                Start
+            </button>
+
+            <div class="taskbar-sep"></div>
+
+            <div id="taskbar-apps"></div>
+
+            <div id="taskbar-clock">
+                <div id="clock-time">00:00</div>
+                <div id="clock-date">Mon Jan 1</div>
+            </div>
+        </div>
+
+        <!-- ===================== START MENU ===================== -->
+        <div id="start-menu" class="hidden">
+            <div class="start-header">
+                <div class="start-avatar">👤</div>
+                <div>
+                    <div class="start-user">User</div>
+                    <div class="start-user-sub">BrowserOS Lite</div>
+                </div>
+            </div>
+
+            <div class="start-search-wrap">
+                <input
+                    class="start-search"
+                    id="start-search"
+                    type="text"
+                    placeholder="Search apps…"
+                />
+            </div>
+
+            <div class="start-apps" id="start-apps">
+                <div class="start-item" data-app="notes">
+                    <span class="start-item-icon">📝</span>
+                    <div>
+                        <div class="start-item-label">Notes</div>
+                        <div class="start-item-sub">Write &amp; save notes</div>
+                    </div>
+                </div>
+                <div class="start-item" data-app="terminal">
+                    <span class="start-item-icon">💻</span>
+                    <div>
+                        <div class="start-item-label">Terminal</div>
+                        <div class="start-item-sub">Command line interface</div>
+                    </div>
+                </div>
+                <div class="start-item" data-app="files">
+                    <span class="start-item-icon">📁</span>
+                    <div>
+                        <div class="start-item-label">Files</div>
+                        <div class="start-item-sub">Browse your filesystem</div>
+                    </div>
+                </div>
+                <div class="start-item" data-app="settings">
+                    <span class="start-item-icon">⚙️</span>
+                    <div>
+                        <div class="start-item-label">Settings</div>
+                        <div class="start-item-sub">
+                            Appearance &amp; system
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="start-footer">
+                <button class="start-footer-btn" id="shutdown-btn">
+                    <span>⏻</span> Shut Down
+                </button>
+            </div>
+        </div>
+
+        <!-- ===================== NOTIFICATION AREA ===================== -->
+        <div id="notification-area"></div>
+
+        <!-- ===================== SCRIPTS ===================== -->
+        <script src="app.js"></script>
+        <script src="apps/notes.js"></script>
+        <script src="apps/terminal.js"></script>
+        <script src="apps/settings.js"></script>
+        <script src="apps/files.js"></script>
+    </body>
+</html>
